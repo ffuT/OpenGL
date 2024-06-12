@@ -1,0 +1,10 @@
+﻿  main.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
+  (compiling source file 'src/main.cpp')
+  C:\Users\Tuff\Documents\GitHub\OpenGL\Dependencies\glfw\include\GLFW\glfw3.h(123,1):
+  see previous definition of 'APIENTRY'
+  
+C:\Users\Tuff\Documents\GitHub\OpenGL\OpenGL\src\macros.h(5,20): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'src/main.cpp')
+  
+  OpenGL.vcxproj -> C:\Users\Tuff\Documents\GitHub\OpenGL\x64\Debug\OpenGL.exe
