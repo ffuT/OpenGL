@@ -37,6 +37,7 @@
 #include "tests/testClearColor.h"
 #include "tests/testRotateTexture.h"
 #include "tests/Test3DimensionsRender.h"
+#include "tests/TestCubeMap.h"
 
 constexpr int WIDTH = 1280, HEIGHT = 720;
 constexpr bool UseVsync = false;
@@ -86,6 +87,7 @@ int main(void){
     menu->RegisterTest<test::TestClearColor>("Clear Color");
     menu->RegisterTest<test::TestRotateTexture>("Rotating cat color shit wow", WIDTH, HEIGHT, &renderer);
     menu->RegisterTest<test::Test3DimensionsRender>("Sphere test iguess", WIDTH, HEIGHT, &renderer);
+    menu->RegisterTest<test::TestCubeMap>("Sky box test", WIDTH, HEIGHT, &renderer);
 
     auto now = std::chrono::system_clock::now();
     auto last = std::chrono::system_clock::now();

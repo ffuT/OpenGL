@@ -52,7 +52,7 @@ namespace test {
 		Shader m_shader = Shader("res/shaders/Basic3d.shader");
 		glm::mat4 m_proj;
 		glm::mat4 m_view;
-		glm::vec3 m_translation;
+		glm::vec3 m_translation = glm::vec3(1.0);
 	};
 }
 
@@ -63,10 +63,10 @@ inline float* CreateSphere(const float radius, const int PointAmount) {
 	float* points = new float[totalelements];
 
 	int index = 0;
-	for (int i = 0; i < PointAmount; i++) {
+	for (size_t i = 0; i < PointAmount; i++) {
 		float phi = PI * i / (PointAmount - 1); // Ranges from 0 to PI
 
-		for (int j = 0; j < PointAmount; j++) {
+		for (size_t j = 0; j < PointAmount; j++) {
 			float theta = 2 * PI * j / (PointAmount - 1); // Ranges from 0 to 2*PI
 
 			points[index++] = radius * sin(phi) * cos(theta);

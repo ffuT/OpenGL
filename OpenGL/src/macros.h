@@ -2,7 +2,7 @@
 
 #include "GL/glew.h"
 
-constexpr float PI = 3.141592653589793238;
+constexpr float PI = (float) 3.141592653589793238;
 
 #define ASSERT(x) if (!(x)) __debugbreak();
 #define GLCall(x) GLClearError();\

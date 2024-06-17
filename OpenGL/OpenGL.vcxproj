@@ -135,6 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\CubeMap.cpp" />
     <ClCompile Include="src\IndexBuffer.cpp" />
     <ClCompile Include="src\macros.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -156,10 +157,12 @@
     <ClCompile Include="src\tests\TestClearColor.cpp" />
     <ClCompile Include="src\tests\TestRotateTexture.cpp" />
     <ClCompile Include="src\tests\Test3DimensionsRender.cpp" />
+    <ClCompile Include="src\tests\TestCubeMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\Shaders\Basic.shader" />
     <None Include="res\Shaders\Basic3d.shader" />
+    <None Include="res\Shaders\skybox.shader" />
     <None Include="src\vendor\glm\detail\func_common.inl" />
     <None Include="src\vendor\glm\detail\func_common_simd.inl" />
     <None Include="src\vendor\glm\detail\func_exponential.inl" />
@@ -300,6 +303,7 @@
     <None Include="src\vendor\glm\gtx\wrap.inl" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\CubeMap.h" />
     <ClInclude Include="src\IndexBuffer.h" />
     <ClInclude Include="src\macros.h" />
     <ClInclude Include="src\Renderer.h" />
@@ -610,9 +614,16 @@
     <ClInclude Include="src\tests\TestClearColor.h" />
     <ClInclude Include="src\tests\TestRotateTexture.h" />
     <ClInclude Include="src\tests\Test3DimensionsRender.h" />
+    <ClInclude Include="src\tests\TestCubeMap.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\texture\catrizz.jpg" />
+    <Image Include="res\texture\skybox\back.jpg" />
+    <Image Include="res\texture\skybox\bottom.jpg" />
+    <Image Include="res\texture\skybox\front.jpg" />
+    <Image Include="res\texture\skybox\left.jpg" />
+    <Image Include="res\texture\skybox\right.jpg" />
+    <Image Include="res\texture\skybox\top.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="src\vendor\glm\CMakeLists.txt" />

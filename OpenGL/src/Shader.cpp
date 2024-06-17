@@ -90,7 +90,6 @@ void Shader::SetUniform1i(const std::string name, int value){
     GLCall(glUniform1i(GetUniformLocation(name), value));
 }
 
-
 void Shader::Bind() const{
     GLCall(glUseProgram(m_RendererID));
 }
