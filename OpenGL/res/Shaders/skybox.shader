@@ -10,7 +10,7 @@ uniform mat4 u_view;
 void main() {
     vec4 pos = u_projection * u_view * vec4(aPos, 1.0);
     gl_Position = pos.xyww;
-    TexCoords = vec3(aPos.x, aPos.y, -aPos.z);
+    TexCoords = vec3(aPos.x, aPos.y, aPos.z);
 }
 
 #shader fragment
@@ -22,5 +22,5 @@ in vec3 TexCoords;
 uniform samplerCube u_skybox;
 
 void main() {
-    FragColor = texture(u_skybox, TexCoords);
+    FragColor =  vec4(1.0, 0.0, 0.0, 1.0);//texture(u_skybox, TexCoords);
 }

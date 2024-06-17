@@ -58,7 +58,7 @@ namespace test {
 
 // helper functions
 inline float* CreateSphere(const float radius, const int PointAmount) {
-	int totalelements = 3 * PointAmount * PointAmount; // Adjusted for more points
+	const int totalelements = 3 * PointAmount * PointAmount; // Adjusted for more points
 
 	float* points = new float[totalelements];
 
@@ -78,7 +78,7 @@ inline float* CreateSphere(const float radius, const int PointAmount) {
 } //thanks gpt
 
 inline unsigned int* CreateSphereIndices(const int PointAmount) {
-	int totalIndices = 6 * (PointAmount - 1) * (PointAmount - 1);
+	const int totalIndices = 6 * (PointAmount - 1) * (PointAmount - 1);
 	unsigned int* indices = new unsigned int[totalIndices];
 
 	int index = 0;

@@ -3,7 +3,7 @@
 test::TestCubeMap::TestCubeMap(const int width, const int height, Renderer* renderer)
 	: m_winWidth(width), m_winHeight(height), m_render(renderer)
 	, m_proj(glm::perspective(glm::radians(45.0f), (float)m_winWidth / (float)m_winHeight, 0.1f, 100.0f))
-	, m_view(glm::lookAt(glm::vec3(0, 0, 0), // Camera position in world space
+	, m_view(glm::lookAt(glm::vec3(0, 0, 5), // Camera position in world space
 						 glm::vec3(0, 1, 0),  // Look at point
 						 glm::vec3(0, 1, 0))) // Up vector 
 {

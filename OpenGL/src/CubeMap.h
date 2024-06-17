@@ -12,4 +12,5 @@ public:
 private:
 	unsigned int m_rendererID;
 	std::string m_filepath;
+
 };

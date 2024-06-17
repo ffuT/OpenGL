@@ -19,7 +19,7 @@ CubeMap::CubeMap(std::string path) : m_filepath(path) {
     GLCall(glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE));
 
     int width, height, nrChannels;
-    for (size_t i = 0; i < 6; i++) {
+    for (unsigned int i = 0; i < 6; i++) {
         std::string fullPath = m_filepath + faces[i];
         unsigned char* data = stbi_load(fullPath.c_str(), &width, &height, &nrChannels, 0);
         
