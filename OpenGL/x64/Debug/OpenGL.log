@@ -1,10 +1,7 @@
-﻿  main.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
-  (compiling source file 'src/main.cpp')
-  C:\Users\Tuff\Documents\GitHub\OpenGL\OpenGL\Dependencies\glfw\include\GLFW\glfw3.h(123,1):
-  see previous definition of 'APIENTRY'
-  
+﻿  CubeMap.cpp
   TestCubeMap.cpp
-  TestRotateTexture.cpp
   Generating Code...
+glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(glew.obj)' or at ''; linking object as if no debug info
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   OpenGL.vcxproj -> C:\Users\Tuff\Documents\GitHub\OpenGL\OpenGL\x64\Debug\OpenGL.exe

@@ -2,21 +2,14 @@
 #include "stb_image/stb_image.h"
 #include <iostream>
 
-CubeMap::CubeMap(std::string path) : m_filepath(path) {
+CubeMap::CubeMap(std::string path) : m_filepath(path), m_rendererID(0) {
     std::string faces[6] = {
         "/right.jpg", "/left.jpg",
         "/top.jpg", "/bottom.jpg",
         "/back.jpg", "/front.jpg"
     };
-
     GLCall(glGenTextures(1, &m_rendererID));
     GLCall(glBindTexture(GL_TEXTURE_CUBE_MAP, m_rendererID));
-
-    GLCall(glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR));
-    GLCall(glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR));
-    GLCall(glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE));
-    GLCall(glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE));
-    GLCall(glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE));
 
     int width, height, nrChannels;
     for (unsigned int i = 0; i < 6; i++) {
@@ -44,6 +37,12 @@ CubeMap::CubeMap(std::string path) : m_filepath(path) {
             stbi_image_free(data);
         }
     }
+    GLCall(glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR));
+    GLCall(glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR));
+    GLCall(glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE));
+    GLCall(glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE));
+    GLCall(glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE));
+
 }
 
 CubeMap::~CubeMap() {
@@ -56,4 +55,5 @@ void CubeMap::Bind(unsigned int slot) const {
 }
 
 void CubeMap::UnBind() const {
+    GLCall(glBindTexture(GL_TEXTURE_CUBE_MAP, 0));
 }

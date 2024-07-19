@@ -137,7 +137,6 @@ int main(void){
 }
 
 void LoadIcon(GLFWwindow* win) {
-    // Load the icon image
     int width, height, channels;
     unsigned char* pixels = stbi_load(iconImgPath.c_str(), &width, &height, &channels, 4);
     if (!pixels)
@@ -145,13 +144,10 @@ void LoadIcon(GLFWwindow* win) {
         glfwTerminate();
         exit(-1);
     }
-    // Create GLFWimage and set its properties
     GLFWimage images[1];
     images[0].width = width;
     images[0].height = height;
     images[0].pixels = pixels;
-    // Set the window icon
     glfwSetWindowIcon(win, 1, images);
-    // Free the image memory
     stbi_image_free(pixels);
 }
